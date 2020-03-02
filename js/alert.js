@@ -20,10 +20,13 @@ alert( isGreater );*/
 
 
 let str = "123";
-alert(typeof str); // string
+//alert(typeof str); // string
 
 let num = Number(str); // становится числом 123
 
-alert(typeof num); // number
-alert("why?");
-alert("why?")
+//alert(typeof num); // number
+//alert("why?");
+//alert("why?")
+
+alert( Number("   123   ") ); 
+alert( Boolean(-1) ); // true
