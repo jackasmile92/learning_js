@@ -28,5 +28,7 @@ let num = Number(str); // становится числом 123
 //alert("why?");
 //alert("why?")
 
-alert( Number("   123   ") ); 
-alert( Boolean(-1) ); // true
+//alert( Number("   123   ") ); 
+//alert( Boolean(-1) ); // true
+
+let varts = 1;
