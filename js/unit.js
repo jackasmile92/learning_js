@@ -1,8 +1,9 @@
-function makeUnit( id, name, image, parent = 0) {
+function makeUnit( id, name, image, post, parent = 0) {
     return {
         id: id,
         name: name,
         image: image,
+        post: post,
         parent: parent
     }
 }
@@ -13,6 +14,7 @@ function getUnitFromArray( unitArray, id ){
             return makeUnit(unitArray[unit].id, 
                             unitArray[unit].name, 
                             unitArray[unit].image, 
+                            unitArray[unit].post, 
                             unitArray[unit].parent);
         } 
     }    
@@ -50,6 +52,7 @@ function getUnitParentUnit(unitArray, unit){
             return makeUnit(unitArray[i].id, 
                             unitArray[i].name, 
                             unitArray[i].image, 
+                            unitArray[i].post,
                             unitArray[i].parent);
         } 
     }    
@@ -64,6 +67,7 @@ function getUnitChildren(unitArray, unit){
            childrenArray.push( makeUnit(unitArray[i].id, 
                                         unitArray[i].name, 
                                         unitArray[i].image, 
+                                        unitArray[i].post,
                                         unitArray[i].parent));
         } 
     }    
@@ -133,6 +137,7 @@ function getUnitSiblings(unitArray, unit){
             siblingArray.push( makeUnit(unitArray[i].id, 
                                         unitArray[i].name, 
                                         unitArray[i].image, 
+                                        unitArray[i].post,
                                         unitArray[i].parent));
         } 
     }    
@@ -167,15 +172,29 @@ function getPreviousSibling(unitArray,unit){
 function unitCard(unit){
     let card = document.createElement('div');
     let imageTag = document.createElement('img');
-    let nameTag = document.createElement('p');
-
-    imageTag.src = './images/'+unit.image;
-    nameTag.innerText = unit.name;
+    let nameTag = document.createElement('h3');
     
+
+    
+    nameTag.innerText = unit.name;
     card.className ='unit';
 
-    card.appendChild(imageTag);
+    if(unit.image){
+        imageTag.src = './images/'+unit.image;
+        card.appendChild(imageTag);
+    }   
+   /* else{
+        imageTag.src = './images/'+unit.image;
+    }*/
+    
+  
     card.appendChild(nameTag);
     
+    if(unit.post){
+         let postTag = document.createElement('h4');
+         postTag.innerText = unit.post;
+         card.appendChild(postTag); 
+    }
+
     return card
 }
