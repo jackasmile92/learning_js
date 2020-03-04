@@ -40,7 +40,7 @@ for (var prop in siblings) {
   console.log(siblings[prop].parent);
   
   
-}*/
+
 let vassal = input[getPositionInArrayById(input,mainUnitOnPage)];
 
 document.body.appendChild(unitCard(vassal));
@@ -73,3 +73,13 @@ for (var prop in childrenArray) {
   document.body.appendChild(unitCard(childrenArray[prop])); 
 }
 });
+}
+
+let siblingPos = 3;
+let sibling =  input[siblingPos];
+
+let ancestor = getUnitFirstAncestor(input, sibling);
+document.body.appendChild(unitCard(ancestor)); 
+document.body.appendChild(unitCard(sibling)); */
+
+document.body.appendChild(generatePage());

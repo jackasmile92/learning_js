@@ -34,14 +34,14 @@ function getPositionInArrayById(unitArray, id){
 
 
 function isUnitInArray(unitArray, id){
-    if(getPositionInArrayById > 0){
+    if(getPositionInArrayById >= 0){
         return true;
     }
     return false;   
 }
 
 function getUnitParentId(unit){
-   return unit.parent
+    return unit.parent;
 }
 
 function getUnitParentUnit(unitArray, unit){
@@ -73,6 +73,11 @@ function getUnitChildren(unitArray, unit){
     }    
     return  childrenArray;  
 
+}
+
+
+function getUnitClildrenNum(unitArray,unit){
+    return getUnitChildren(unitArray, unit).length;
 }
 
 function sortUnitArrayById(unitArray, orderInd = 'ASC') {
@@ -151,7 +156,6 @@ function getSibling(unitArray,unit, orderInd = 'ASC'){
     siblingArray = sortUnitArrayById(siblingArray,orderInd);
 
     let pos = getPositionInArrayById(siblingArray,unit.id);
-    console.log(pos);
     if( pos + 2 > siblingArray.length){
         return siblingArray[0];
     }
@@ -168,33 +172,13 @@ function getPreviousSibling(unitArray,unit){
     return getSibling(unitArray,unit,'DESC');
 }
 
+function getUnitFirstAncestor(unitArray,unit){
+    let ancestor = getUnitParentUnit(unitArray,unit);
 
-function unitCard(unit){
-    let card = document.createElement('div');
-    let imageTag = document.createElement('img');
-    let nameTag = document.createElement('h3');
-    
-
-    
-    nameTag.innerText = unit.name;
-    card.className ='unit';
-
-    if(unit.image){
-        imageTag.src = './images/'+unit.image;
-        card.appendChild(imageTag);
-    }   
-   /* else{
-        imageTag.src = './images/'+unit.image;
-    }*/
-    
-  
-    card.appendChild(nameTag);
-    
-    if(unit.post){
-         let postTag = document.createElement('h4');
-         postTag.innerText = unit.post;
-         card.appendChild(postTag); 
+    while(ancestor.parent !== 0 || ancestor.parent === true){
+        ancestor = getUnitParentUnit(unitArray,ancestor);
     }
-
-    return card
+    
+    return ancestor;
 }
+
