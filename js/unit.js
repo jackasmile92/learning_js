@@ -1,4 +1,4 @@
-function makeUnit( id, name, image, parent) {
+function makeUnit( id, name, image, parent = 0) {
     return {
         id: id,
         name: name,
@@ -18,6 +18,24 @@ function getUnitFromArray( unitArray, id ){
     }    
     return  makeUnit();  
 
+}
+
+function getPositionInArrayById(unitArray, id){
+    for(let i = 0; i < unitArray.length; i++){
+        if(unitArray[i].id == id){
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+
+function isUnitInArray(unitArray, id){
+    if(getPositionInArrayById > 0){
+        return true;
+    }
+    return false;   
 }
 
 function getUnitParentId(unit){
@@ -61,7 +79,7 @@ function sortUnitArrayById(unitArray, orderInd = 'ASC') {
         idArray.push(unitArray[i].id);
     }
     
-    if (orderInd = 'ASC' && unitArray.length > 0 ){
+    if (orderInd == 'ASC' && unitArray.length > 0 ){
         let minId;
         
         for(let i = 0; i < idArray.length; i++){
@@ -80,7 +98,7 @@ function sortUnitArrayById(unitArray, orderInd = 'ASC') {
         
     }
 
-    if (orderInd = 'DESC' && unitArray.length > 0 ){
+    if (orderInd == 'DESC' && unitArray.length > 0 ){
         let maxId;
         
         for(let i = 0; i < idArray.length; i++){
@@ -111,7 +129,7 @@ function getUnitSiblings(unitArray, unit){
     let siblingArray = [];
 
     for (var i in unitArray) {
-        if (getUnitParentId(unitArray[i]) == getUnitParentId(unit) && unitArray[i].id != unit.id) {
+        if (getUnitParentId(unitArray[i]) == getUnitParentId(unit) && unitArray[i].id !== unit.id) {
             siblingArray.push( makeUnit(unitArray[i].id, 
                                         unitArray[i].name, 
                                         unitArray[i].image, 
@@ -121,6 +139,30 @@ function getUnitSiblings(unitArray, unit){
     return  siblingArray;  
 
 }
+
+function getSibling(unitArray,unit, orderInd = 'ASC'){
+    let siblingArray = getUnitSiblings(unitArray,unit);
+    siblingArray.push(unit);
+    siblingArray = sortUnitArrayById(siblingArray,orderInd);
+
+    let pos = getPositionInArrayById(siblingArray,unit.id);
+    console.log(pos);
+    if( pos + 2 > siblingArray.length){
+        return siblingArray[0];
+    }
+    
+    return siblingArray[pos + 1];
+}
+
+
+function getNextSibling(unitArray,unit){
+    return getSibling(unitArray,unit,'ASC');
+}
+
+function getPreviousSibling(unitArray,unit){
+    return getSibling(unitArray,unit,'DESC');
+}
+
 
 function unitCard(unit){
     let card = document.createElement('div');

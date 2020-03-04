@@ -22,11 +22,23 @@ for (var prop in childArray) {
   
 }
 */
+/*let siblingPos = 5;
+let sibling =  input[siblingPos];
 
-let siblings = getUnitSiblings(input, input[0]);
-siblings.push(input[0]);
+document.body.appendChild(unitCard(sibling)); 
+document.body.appendChild(unitCard(getNextSibling(input, sibling))); 
+document.body.appendChild(unitCard(getPreviousSibling(input, sibling))); 
+
+let siblings = getUnitSiblings(input, sibling);
+siblings.push(sibling);
+
+siblings = sortUnitArrayById(siblings);
 
 for (var prop in siblings) {
   document.body.appendChild(unitCard(siblings[prop])); 
+  console.log(siblings[prop].id);
+  console.log(siblings[prop].parent);
   
-}
+  
+}*/
+
