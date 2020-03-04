@@ -41,21 +41,27 @@ function isUnitInArray(unitArray, id){
 }
 
 function getUnitParentId(unit){
-    return unit.parent;
+    if(unit.parent) {
+        return unit.parent;
+    }
+    return -1;
 }
 
 function getUnitParentUnit(unitArray, unit){
     let parent = getUnitParentId(unit);
+    console.log(parent);
+    if (parent > 0){
+        for (var i in unitArray) {
+            if (unitArray[i].id == parent) {
+                return makeUnit(unitArray[i].id, 
+                                unitArray[i].name, 
+                                unitArray[i].image, 
+                                unitArray[i].post,
+                                unitArray[i].parent);
+            } 
+        }  
+    }
 
-    for (var i in unitArray) {
-        if (unitArray[i].id == parent) {
-            return makeUnit(unitArray[i].id, 
-                            unitArray[i].name, 
-                            unitArray[i].image, 
-                            unitArray[i].post,
-                            unitArray[i].parent);
-        } 
-    }    
     return  makeUnit();  
 }
 

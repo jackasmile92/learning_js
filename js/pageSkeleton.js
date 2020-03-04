@@ -43,7 +43,7 @@ function previousUnit(unit){
 }
 
 function higherUnit(unit){
-    return unitCard(getPreviousSibling(globalInput, unit));
+    return unitCard(unit);
 }
 
 
