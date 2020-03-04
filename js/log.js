@@ -41,4 +41,35 @@ for (var prop in siblings) {
   
   
 }*/
+let vassal = input[getPositionInArrayById(input,mainUnitOnPage)];
 
+document.body.appendChild(unitCard(vassal));
+
+let childrenArray = getUnitChildren(input, vassal);
+
+for (var prop in childrenArray) {
+  document.body.appendChild(unitCard(childrenArray[prop])); 
+}
+
+var button = document.createElement("button");
+button.innerHTML = "Do Something";
+
+// 2. Append somewhere
+var body = document.getElementsByTagName("body")[0];
+body.appendChild(button);
+
+// 3. Add event handler
+button.addEventListener ("click", function() {
+  const removeElements = (elms) => elms.forEach(el => el.remove());
+  removeElements( document.querySelectorAll(".unit") );
+  
+  mainUnitOnPage = mainUnitOnPage + 1;
+vassal = input[getPositionInArrayById(input,mainUnitOnPage)];
+
+document.body.appendChild(unitCard(vassal));
+childrenArray = getUnitChildren(input, vassal);
+
+for (var prop in childrenArray) {
+  document.body.appendChild(unitCard(childrenArray[prop])); 
+}
+});

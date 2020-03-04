@@ -1,4 +1,5 @@
-module.exports = [
+//module.exports = [
+  let input = [
 {
   id: 1,
   name: "Nilfgaard",

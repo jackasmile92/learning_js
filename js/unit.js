@@ -172,6 +172,8 @@ function unitCard(unit){
     imageTag.src = './images/'+unit.image;
     nameTag.innerText = unit.name;
     
+    card.className ='unit';
+
     card.appendChild(imageTag);
     card.appendChild(nameTag);
     
