@@ -80,6 +80,18 @@ let sibling =  input[siblingPos];
 
 let ancestor = getUnitFirstAncestor(input, sibling);
 document.body.appendChild(unitCard(ancestor)); 
-document.body.appendChild(unitCard(sibling)); */
+document.body.appendChild(unitCard(sibling)); 
+
+//document.body.appendChild(generatePage());
+
+
+let siblingPos = 11;
+let sibling =  getUnitByID(input, siblingPos);
+
+console.log(getUnitLevel(input, sibling));
+console.log(getUnitFirstAncestor(input, sibling).name);*/
 
 document.body.appendChild(generatePage());
+
+//console.log(getUnitByID(input, 25).parent);
+//console.log(isSingleChild(input,getUnitByID(input, 25)));

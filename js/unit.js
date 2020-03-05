@@ -1,4 +1,4 @@
-function makeUnit( id, name, image, post, parent = 0) {
+function makeUnit( id = -1 , name = '', image = '', post = '', parent = 0) {
     return {
         id: id,
         name: name,
@@ -8,6 +8,7 @@ function makeUnit( id, name, image, post, parent = 0) {
     }
 }
 
+/*
 function getUnitFromArray( unitArray, id ){
     for (var unit in unitArray) {
         if (unitArray[unit].id == id ) {
@@ -21,6 +22,8 @@ function getUnitFromArray( unitArray, id ){
     return  makeUnit();  
 
 }
+*/
+
 
 function getPositionInArrayById(unitArray, id){
     for(let i = 0; i < unitArray.length; i++){
@@ -34,10 +37,19 @@ function getPositionInArrayById(unitArray, id){
 
 
 function isUnitInArray(unitArray, id){
-    if(getPositionInArrayById >= 0){
+    if(getPositionInArrayById(unitArray, id) >= 0){
         return true;
     }
     return false;   
+}
+
+function getUnitByID(unitArray, id){
+
+    if(isUnitInArray(unitArray, id)){
+        return(unitArray[getPositionInArrayById(unitArray, id)]);
+    }
+
+    return makeUnit();
 }
 
 function getUnitParentId(unit){
@@ -49,7 +61,7 @@ function getUnitParentId(unit){
 
 function getUnitParentUnit(unitArray, unit){
     let parent = getUnitParentId(unit);
-    console.log(parent);
+
     if (parent > 0){
         for (var i in unitArray) {
             if (unitArray[i].id == parent) {
@@ -133,7 +145,7 @@ function sortUnitArrayById(unitArray, orderInd = 'ASC') {
     }
 
     for(let i in idArray){
-        sortedArray.push(getUnitFromArray(unitArray, idArray[i]));
+        sortedArray.push(getUnitByID(unitArray, idArray[i]));
     }
 
     return sortedArray;
@@ -144,7 +156,7 @@ function getUnitSiblings(unitArray, unit){
     let siblingArray = [];
 
     for (var i in unitArray) {
-        if (getUnitParentId(unitArray[i]) == getUnitParentId(unit) && unitArray[i].id !== unit.id) {
+        if (unitArray[i].parent == unit.parent && unitArray[i].id !== unit.id) {
             siblingArray.push( makeUnit(unitArray[i].id, 
                                         unitArray[i].name, 
                                         unitArray[i].image, 
@@ -156,7 +168,7 @@ function getUnitSiblings(unitArray, unit){
 
 }
 
-function getSibling(unitArray,unit, orderInd = 'ASC'){
+function getSibling(unitArray, unit, orderInd = 'ASC'){
     let siblingArray = getUnitSiblings(unitArray,unit);
     siblingArray.push(unit);
     siblingArray = sortUnitArrayById(siblingArray,orderInd);
@@ -181,10 +193,54 @@ function getPreviousSibling(unitArray,unit){
 function getUnitFirstAncestor(unitArray,unit){
     let ancestor = getUnitParentUnit(unitArray,unit);
 
-    while(ancestor.parent !== 0 || ancestor.parent === true){
+    while(ancestor.parent !== 0 && unit.parent !== undefined){
         ancestor = getUnitParentUnit(unitArray,ancestor);
     }
     
     return ancestor;
 }
 
+
+function getUnitLevel(unitArray, unit){
+    let unitLevel = 0; 
+
+    if(unit.parent !== 0 && unit.parent !== undefined){
+        unitLevel+=1;  
+        let ancestor = getUnitParentUnit(unitArray,unit);
+    
+   
+        while(ancestor.parent !== 0 && unit.parent !== undefined){
+            
+            ancestor = getUnitParentUnit(unitArray,ancestor);
+            unitLevel+=1;
+        }
+    
+    }
+
+     
+
+    return unitLevel;
+}
+
+function getHighestUnit(unitArray){
+    let sortedArray = sortUnitArrayById(unitArray);
+
+    for(let i = 0; i < sortedArray.length; i++){
+        if (getUnitLevel(sortedArray, sortedArray[i]) == 0 ){
+
+            return sortedArray[i];
+        }
+    }   
+
+    return makeUnit();
+}
+
+function isSingleChild(unitArray, unit){
+    let siblingArray = getUnitSiblings(unitArray, unit);
+
+    if(siblingArray.length == 0){
+        return true;
+    }
+
+    return false;
+}

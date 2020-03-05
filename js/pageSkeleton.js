@@ -61,15 +61,23 @@ function unitRow(unitArray){
 function currentLevel(unit){
  
     let card = document.createElement('div');
-    card.appendChild(previousUnit(unit));
-    card.appendChild(mainUnit(unit));
-    card.appendChild(nextUnit(unit));
+    if(isSingleChild(globalInput,unit)){
+        card.appendChild(mainUnit(unit));
+    } else{    
+        card.appendChild(previousUnit(unit));
+        card.appendChild(mainUnit(unit));
+        card.appendChild(nextUnit(unit));
+    }
     return card;
 }
 
 function lowerLevel(unit){
     let childArray = getUnitChildren(globalInput, unit); 
-    return unitRow(childArray);
+    if(childArray.length > 0){
+        return unitRow(childArray);
+    }
+
+    return document.createElement('div');;
 }
 
 function upperLevel(unit){
@@ -79,7 +87,7 @@ function upperLevel(unit){
 }
 
 function generatePage(){
-    let unit = getUnitFromArray(globalInput, mainUnitOnPage);
+    let unit = getUnitByID(globalInput, mainUnitOnPage);
     let page = document.createElement('div');
 
     page.appendChild(upperLevel(unit));
@@ -87,4 +95,7 @@ function generatePage(){
     page.appendChild(lowerLevel(unit));
 
     return page;
+}
+
+function generateZeroPage(){
 }

@@ -1,3 +1,3 @@
-let mainUnitOnPage = 1;
+let mainUnitOnPage = 25;
 let globalInput = []; 
 globalInput = input;
