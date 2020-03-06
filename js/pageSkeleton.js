@@ -10,9 +10,18 @@ function unitCard(unit, className = ""){
     let imgWrap = document.createElement('div');
     let imageTag = document.createElement('img');
     let nameTag = document.createElement('h3');
-    let childTag = document.createElement('p');
 
-    childTag.innerText = getAllDecendants(globalInput, unit);
+    let numRomb = document.createElement('div');
+    numRomb.className = "childRomb";
+    let imgRomb = document.createElement('div');
+    imgRomb.className = "romb";
+    let childNum = document.createElement('div');
+    childNum.innerText = getAllDecendants(globalInput, unit);
+    childNum.className = "childNum";
+
+    numRomb.appendChild(imgRomb);
+    numRomb.appendChild(childNum);
+
         
     nameTag.innerText = unit.name;
     card.className = className;
@@ -28,7 +37,7 @@ function unitCard(unit, className = ""){
     
     imgWrap.appendChild(imageTag);
     card.appendChild(imgWrap);
-    card.appendChild(childTag);
+    card.appendChild(numRomb);
     card.appendChild(nameTag);
     
     if(unit.post){
@@ -37,6 +46,7 @@ function unitCard(unit, className = ""){
          card.appendChild(postTag); 
     }
 
+    
     return card;
 }
 
