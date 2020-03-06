@@ -93,6 +93,15 @@ function getUnitChildren(unitArray, unit){
 
 }
 
+function isAnyChild(unitArray, unit){
+    for (var i in unitArray) {
+        if (getUnitParentId(unitArray[i]) == unit.id ) {
+           return true;
+        } 
+    }    
+    return  false;  
+
+}
 
 function getUnitClildrenNum(unitArray,unit){
     return getUnitChildren(unitArray, unit).length;
@@ -243,4 +252,21 @@ function isSingleChild(unitArray, unit){
     }
 
     return false;
+}
+
+
+function getAllDecendants(unitArray, unit){
+    let desSum = 0;
+
+    if(isAnyChild(unitArray, unit)){
+        let childrenArray = getUnitChildren(unitArray, unit);
+
+        desSum += childrenArray.length;
+
+        for(let i = 0 ; i < childrenArray.length;  i++){
+            desSum +=  getAllDecendants(unitArray, childrenArray[i]);
+        }
+    }
+
+    return desSum;
 }

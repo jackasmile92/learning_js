@@ -1,21 +1,26 @@
+function checkImage(imageSrc, good, bad) {
+    var img = new Image();
+    img.onload = good; 
+    img.onerror = bad;
+    img.src = imageSrc;
+  }
+
 function unitCard(unit){
     let card = document.createElement('div');
     let imageTag = document.createElement('img');
     let nameTag = document.createElement('h3');
     let childTag = document.createElement('p');
 
-    childTag.innerText = getUnitClildrenNum(globalInput, unit);
+    childTag.innerText = getAllDecendants(globalInput, unit);
         
     nameTag.innerText = unit.name;
     card.className ='unit';
-
-    if(unit.image){
-        imageTag.src = './images/'+unit.image;
-    }   
-    else{
-        let ancestor = getUnitFirstAncestor(globalInput, unit);
-        imageTag.src = './images/'+ ancestor.image;
-    }
+    
+    checkImage( './images/'+unit.image, 
+                function(){ imageTag.src = './images/'+unit.image; }, 
+                function(){ let ancestor = getUnitFirstAncestor(globalInput, unit);
+                            imageTag.src = './images/'+ ancestor.image; 
+                });
 
     card.appendChild(imageTag);
     card.appendChild(childTag);

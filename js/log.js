@@ -91,7 +91,83 @@ let sibling =  getUnitByID(input, siblingPos);
 console.log(getUnitLevel(input, sibling));
 console.log(getUnitFirstAncestor(input, sibling).name);*/
 
-document.body.appendChild(generatePage());
+//document.body.appendChild(generatePage());
 
 //console.log(getUnitByID(input, 25).parent);
 //console.log(isSingleChild(input,getUnitByID(input, 25)));
+
+/*var img = new Image();
+
+function checkImage(imageSrc, good, bad) {
+  var img = new Image();
+  img.onload = good; 
+  img.onerror = bad;
+  img.src = imageSrc;
+}
+
+checkImage( './images/albrich.jpg', function(){ alert("good"); }, function(){ alert("bad"); } );
+
+try {
+// img.src = './images/vlodimir.jpg' ;
+img.src = './images/albrich.jpg' ;
+
+console.log(img.height);
+}
+catch(err) {
+  console.log('aaa');
+}
+
+
+let card = document.createElement('svg');
+
+card.height = "140";
+card.width = "500";
+
+let circle = document.createElement('ellipse');
+
+
+circle.cx = "200";
+circle.cy = "200";
+circle.rx = "100";
+circle.ry = "50";
+circle.style = "fill:yellow;stroke:purple;stroke-width:2";
+    
+card.appendChild(circle);
+document.body.appendChild(card);
+
+const div1 =  document.createElement('div');
+div1.id = "svg54583";
+
+const f = (() => {
+
+  // create the svg element
+  const svg1 = document. createElementNS("http://www.w3.org/2000/svg", "svg");
+
+  // set width and height
+  svg1.setAttribute("width", "1000");
+  svg1.setAttribute("height", "100");
+
+  // create a circle
+  const cir1 = document. createElementNS("http://www.w3.org/2000/svg", "circle");
+  cir1.setAttribute("cx", "50");
+  cir1.setAttribute("cy", "50");
+  cir1.setAttribute("r", "50");
+  cir1.setAttribute("fill", "red");
+
+  // attach it to the container
+  svg1.appendChild(cir1);
+
+  // attach container to document
+  div1.appendChild(svg1);
+
+});
+
+f()
+;
+
+document.body.appendChild(div1);*/
+
+let siblingPos = 25;
+let sibling =  getUnitByID(input, siblingPos);
+
+console.log(getAllDecendants(input, sibling));
