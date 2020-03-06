@@ -1,0 +1,27 @@
+.profilePic{
+    background: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    padding: 7px;
+  }
+  
+.picWrap{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+  }
+
+.childRow{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: center;
+    left: -8.43%;
+    right: -9.64%;
+}
+
+.child{
+    margin-left: 104px;
+
+}

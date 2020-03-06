@@ -5,8 +5,9 @@ function checkImage(imageSrc, good, bad) {
     img.src = imageSrc;
   }
 
-function unitCard(unit){
+function unitCard(unit, className = ""){
     let card = document.createElement('div');
+    let imgWrap = document.createElement('div');
     let imageTag = document.createElement('img');
     let nameTag = document.createElement('h3');
     let childTag = document.createElement('p');
@@ -14,7 +15,7 @@ function unitCard(unit){
     childTag.innerText = getAllDecendants(globalInput, unit);
         
     nameTag.innerText = unit.name;
-    card.className ='unit';
+    card.className = className;
     
     checkImage( './images/'+unit.image, 
                 function(){ imageTag.src = './images/'+unit.image; }, 
@@ -22,7 +23,11 @@ function unitCard(unit){
                             imageTag.src = './images/'+ ancestor.image; 
                 });
 
-    card.appendChild(imageTag);
+    imgWrap.className = "picWrap";
+    imageTag.className = "profilePic";
+    
+    imgWrap.appendChild(imageTag);
+    card.appendChild(imgWrap);
     card.appendChild(childTag);
     card.appendChild(nameTag);
     
@@ -52,13 +57,15 @@ function higherUnit(unit){
 }
 
 
-function unitRow(unitArray){
+function unitRow(unitArray, className, unitClass){
     let deck = document.createElement('div');
     let sortedCard = sortUnitArrayById(unitArray);
 
     for(let i in unitArray){
-        deck.appendChild(unitCard(sortedCard[i]));
+        deck.appendChild(unitCard(sortedCard[i], unitClass));
     }
+
+    deck.className = className;
 
     return deck;
 }
@@ -79,7 +86,7 @@ function currentLevel(unit){
 function lowerLevel(unit){
     let childArray = getUnitChildren(globalInput, unit); 
     if(childArray.length > 0){
-        return unitRow(childArray);
+        return unitRow(childArray, 'childRow', 'child');
     }
 
     return document.createElement('div');;

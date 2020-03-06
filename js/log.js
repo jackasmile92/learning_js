@@ -165,9 +165,12 @@ const f = (() => {
 f()
 ;
 
-document.body.appendChild(div1);*/
+document.body.appendChild(div1);
 
 let siblingPos = 25;
 let sibling =  getUnitByID(input, siblingPos);
 
-console.log(getAllDecendants(input, sibling));
+console.log(getAllDecendants(input, sibling));*/
+
+
+document.body.appendChild(generatePage());
