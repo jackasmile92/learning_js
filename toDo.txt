@@ -1,0 +1,2 @@
+make html skeleton
+make js generation of html skeleton
