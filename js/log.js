@@ -1,7 +1,7 @@
 //alert('AAAAAAAA');
 //alert(varts);
 //alert(input.length);
- var btn;
+ //var btn;
 /*for (var prop in input) {
     console.log(input[prop].id);
     document.body.appendChild(unitCard(getUnitFromArray(input, input[prop].id))); 
@@ -171,6 +171,6 @@ let siblingPos = 25;
 let sibling =  getUnitByID(input, siblingPos);
 
 console.log(getAllDecendants(input, sibling));*/
+console.log( getUnitSiblings(globalInput, getHighestUnit(globalInput))[0].id);
 
-
-document.body.appendChild(generatePage());
+document.body.appendChild(generateZeroPage());

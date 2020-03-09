@@ -118,6 +118,3 @@ function generatePage(){
 
     return page;
 }
-
-function generateZeroPage(){
-}
