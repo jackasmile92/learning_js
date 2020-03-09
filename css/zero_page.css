@@ -212,6 +212,7 @@ div#Nilfgaard{
     text-align: center;
 
     /* Gradient text */
+    border-color: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
 
     background: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
     -webkit-background-clip: text;

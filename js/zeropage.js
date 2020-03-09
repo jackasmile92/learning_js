@@ -33,11 +33,31 @@ function generateZeroPage () {
 
         let countyName = document.createElement('div');
         countyName.id =  countryArray[i].name;
+        
         countyName.innerHTML = countryArray[i].name;
+        ava.onclick = function(){
+                    alert(countryArray[i].name);
+        };
+        ava.onmouseover = function(){
+            ava.style = "cursor: pointer;";
+        }
+
+        countyName.onmouseover = function(){
+            countyName.style = "border-bottom: 1px solid #DBAE64; cursor: pointer;";
+        };
+        countyName.onmouseout = function(){
+            countyName.style = "border-bottom: none;";
+        };
+        
+        countyName.onclick = function(){
+            alert(countryArray[i].name);
+        };
+
 
         country.appendChild(ava);
         country.appendChild(countyName);
 
+       
         countryFrame.appendChild(country);
     }
 
