@@ -1,0 +1,148 @@
+body{
+    position: relative;
+    width: 1440px;
+    height: 1301px;
+    
+    /* Black */
+    
+    background: #717171;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
+
+.bg{
+    position: absolute;
+    width: 1440px;
+    height: 2410px;
+    left: calc(50% - 1440px/2);
+    top: 0px;
+    background-image: url("../img/bg.png");
+}
+
+.Group_103{
+    position: absolute;
+    width: 1191px;
+    height: 1074px;
+    left: 130px;
+    top: 65px;
+}
+
+.Group_49{
+    position: absolute;
+    width: 53px;
+    height: 36px;
+    left: 130px;
+    top: 88px;
+}
+
+.Group_49 hr {
+    position: absolute;
+    width: 57px;
+    height: 0px;
+    left: 130px;
+    top: 124px;
+
+    opacity: 0.2;
+    /* Gold */
+
+    border: 1px solid #DBAE64;
+}
+
+.back{
+    position: absolute;
+    width: 55px;
+    height: 33px;
+    left: 130px;
+    top: 88px;
+
+    /* Button text */
+
+    font-family: Crimson Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 128.6%;
+    /* or 33px */
+
+    letter-spacing: 0.035em;
+
+    /* Gradient text */
+
+    background: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Group_93 {
+    position: absolute;
+    width: 880px;
+    height: 352px;
+    left: 280px;
+    top: 787px;
+
+}
+
+.person_card_1{
+    position: absolute;
+    width: 280px;
+    height: 352px;
+    left: calc(50% - 280px/2);
+
+}
+
+.person_card_2{
+    position: absolute;
+    width: 280px;
+    height: 352px;
+    left: calc(50% - 280px/2 - 300px);
+
+}
+
+.person_card_3{
+    position: absolute;
+    width: 280px;
+    height: 352px;
+    left: calc(50% - 280px/2 + 300px);
+
+}
+
+.Element{
+    position: absolute;
+    width: 11px;
+    height: 130px;
+    left: calc(50% - 11px/2 + 0.5px);
+    top: 581px;
+}
+
+.Group_37{
+    position: absolute;
+    width: 223px;
+    height: 78px;
+    left: 609px;
+    top: 437px;
+
+}
+
+.image_10{
+    position: absolute;
+    width: 88px;
+    height: 79px;
+    right: 119px;
+    top: 65px;
+}
+
+.image_10 div{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: url("./img/logo.png");
+}
+
+.Group_36{
+    position: absolute;
+    width: 572px;
+    height: 359px;
+    left: 434px;
+    top: 67px;
+    
+}
