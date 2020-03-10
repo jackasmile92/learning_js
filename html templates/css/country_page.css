@@ -21,23 +21,23 @@ body{
     position: absolute;
     width: 1191px;
     height: 1074px;
+    top: 40px;
     left: 130px;
-    top: 65px;
 }
 
 .Group_49{
     position: absolute;
     width: 53px;
     height: 36px;
-    left: 130px;
-    top: 88px;
+    
+
 }
 
 .Group_49 hr {
     position: absolute;
     width: 57px;
     height: 0px;
-    left: 130px;
+    
     top: 124px;
 
     opacity: 0.2;
@@ -50,7 +50,7 @@ body{
     position: absolute;
     width: 55px;
     height: 33px;
-    left: 130px;
+    
     top: 88px;
 
     /* Button text */
@@ -76,7 +76,7 @@ body{
     width: 880px;
     height: 352px;
     left: 280px;
-    top: 787px;
+    top: 722px;
 
 }
 
@@ -109,40 +109,136 @@ body{
     width: 11px;
     height: 130px;
     left: calc(50% - 11px/2 + 0.5px);
-    top: 581px;
+    top: 514px;
 }
 
 .Group_37{
     position: absolute;
     width: 223px;
     height: 78px;
-    left: 609px;
-    top: 437px;
+    left: 479px;
+    top: 350px;
 
+}
+
+.Group_37 p{
+    position: absolute;
+    width: 250px;
+    height: 78px;
+    left: calc(50% - 223px/2 + 0.5px);
+
+    /* Heading 1 */
+
+    font-family: Crimson Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 61px;
+    line-height: 128.6%;
+    /* or 78px */
+
+    text-align: center;
+
+    /* Gradient text */
+
+    color: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
+    background: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .image_10{
     position: absolute;
     width: 88px;
     height: 79px;
-    right: 119px;
+    right: 100px;
     top: 65px;
 }
 
-.image_10 div{
+.image_10 img{
     position: absolute;
+    width: 88px;
+    height: 79px;
     left: 0%;
     right: 0%;
     top: 0%;
     bottom: 0%;
-    background: url("./img/logo.png");
 }
 
 .Group_36{
     position: absolute;
     width: 572px;
     height: 359px;
-    left: 434px;
+    left: calc(50% - 451px/2 - 80px);
+
+}
+
+.Group_36 .avatar_2{
+    position: absolute;
+    width: 359px;
+    height: 359px;
+    left: calc(50% - 359px/2 + 0.5px);
     top: 67px;
+
+    border-radius: 250px;
+}
+
+.avatar_2 img{
+    position: absolute;
+    left: 20px;
+    
+    top: -7.83%;
+    bottom: -10.24%;
+    border-radius: 250px;
+}
+
+.element_right{
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    left: calc(50% - 46px/2 + 359px);
+    top: 223px;
+
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.element_right .vector{
+    position: absolute;
+    left: 130%;
+
+    top: 26.09%;
+    bottom: 26.09%;
+}
+
+.element_right .ell{
+    position: absolute;
+    left: 100%;
+    right: -100%;
+    top: 0%;
+    bottom: 0%;
+}
+
+.element_left{
+    position: absolute;
+    width: 46px;
+    height: 46px;
+   
+    top: 223px;
+
+}
+
+.element_left .vector{
+    position: absolute;
+    left: 34.78%;
+    right: 38.04%;
+    top: 26.09%;
+    bottom: 26.09%;
+}
+
+.element_left .ell{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
     
 }

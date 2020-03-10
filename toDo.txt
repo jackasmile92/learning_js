@@ -1,3 +1,4 @@
 make html skeleton
 make js generation of html skeleton
 dont forget about page title in chrome tab
+adapt bg image
