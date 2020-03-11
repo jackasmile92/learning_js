@@ -11,10 +11,14 @@ body{
 .bg{
     position: absolute;
     width: 1440px;
-    height: 2410px;
+    height: 1301px;
     left: calc(50% - 1440px/2);
     top: 0px;
     background-image: url("../img/bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 .Group_103{
@@ -75,7 +79,7 @@ body{
     position: absolute;
     width: 880px;
     height: 352px;
-    left: 280px;
+    left: calc(50% - 880px/2);
     top: 722px;
 
 }
@@ -88,6 +92,155 @@ body{
 
 }
 
+.icon_number_1{
+    position: absolute;
+    width: 68px;
+    height: 73px;
+    left: calc(50% - 68px/2 - 60px);
+    top: 152px;
+    text-align: center;
+}
+
+.djopa { 
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 10.96%;
+    bottom: 5.48%;
+    
+    /* Numbers */
+    display: inline-block;
+    font-family: Crimson Text;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 27px;
+    line-height: 55px;
+ 
+    background: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.icon_number_1 img{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 2.74%;
+   
+}
+
+.person_card_1 .avatar_1-0{
+    position: absolute;
+    width: 166px;
+    height: 166px;
+    left: calc(50% - 166px/2 + 1px);
+    top: 37px;
+    
+    border-radius: 121px;
+}
+
+.person_card_1 .avatar_1-0 img{
+    
+    border-radius: 121px;
+}
+
+.person_card_2 .avatar_1-0{
+    position: absolute;
+    width: 166px;
+    height: 166px;
+    left: calc(50% - 166px/2 + 1px);
+    top: 37px;
+    
+    border-radius: 121px;
+}
+
+
+.person_card_3 .avatar_1-0{
+    position: absolute;
+    width: 166px;
+    height: 166px;
+    left: calc(50% - 166px/2 + 1px);
+    top: 37px;
+    
+    border-radius: 121px;
+}
+
+
+.person_card_2 .avatar_1-0 img{
+    
+    border-radius: 121px;
+}
+
+.person_card_3 .avatar_1-0 img{
+    
+    border-radius: 121px;
+}
+
+.Frame_1 {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    
+    position: absolute;
+    width: 223px;
+    height: 70px;
+    left: calc(50% - 223px/2 + 0.5px);
+    top: 251px;
+}
+
+.Frame_1 .title{
+
+    position: static;
+    height: 25px;
+    left: 16.37%;
+    right: 16.37%;
+    top: 45px;
+    
+    /* Paragraph */
+    
+    font-family: Crimson Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 148.6%;
+    /* or 25px */
+    
+    text-align: center;
+    letter-spacing: 0.035em;
+    
+    /* Gold */
+    
+    color: #DBAE64;
+    
+}
+
+.Frame_1 .name{
+    position: static;
+    height: 35px;
+    left: 0%;
+    right: 0%;
+    top: 0px;
+
+    /* Heading 3 */
+
+    font-family: Crimson Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 110%;
+    /* or 35px */
+
+    text-align: center;
+
+    /* Gradient text */
+
+     color: #DBAE64;
+
+}
+
+
 .person_card_2{
     position: absolute;
     width: 280px;
@@ -96,6 +249,17 @@ body{
 
 }
 
+.person_card_2 .Frame_1{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+
+    position: absolute;
+    width: 500px;
+    height: 70px;
+    left: calc(50% - 500px/2 + 0.5px);
+    top: 251px;
+}
 .person_card_3{
     position: absolute;
     width: 280px;
@@ -211,7 +375,7 @@ body{
 
 .element_right .ell{
     position: absolute;
-    left: 100%;
+    left: 90%;
     right: -100%;
     top: 0%;
     bottom: 0%;
