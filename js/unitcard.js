@@ -5,10 +5,7 @@ function checkImage(imageSrc, good, bad) {
     img.src = imageSrc;
   }
 
-function generateUnitCard(unit){
-    let unitCard = document.createElement('div');
-    unitCard.className = "person card " + unit.id;
-
+function addAvatar(unit){
     let avatar = document.createElement('div');
     avatar.className = "avatar small";
     let imageTag = document.createElement('img');
@@ -21,6 +18,11 @@ function generateUnitCard(unit){
 
     avatar.appendChild(imageTag);
 
+    return avatar;
+
+}
+
+function addSubgects(subjSum){
     let subject = document.createElement('div');
     subject.className = "person subjects";
 
@@ -28,11 +30,15 @@ function generateUnitCard(unit){
     rmb.src = "./images/image_12.png";
 
     let subjNum = document.createElement('div');
-    subjNum.innerText = getAllDecendants(globalInput, unit);
+    subjNum.innerText = subjSum;
 
     subject.appendChild(rmb);
     subject.appendChild(subjNum);
 
+    return subject;
+}
+
+function addAddressing(unit){
     let addressing = document.createElement('div');
     addressing.className = "person addressing";
 
@@ -47,9 +53,21 @@ function generateUnitCard(unit){
     addressing.appendChild(unitName);
     addressing.appendChild(unitTitle);
 
-    unitCard.appendChild(avatar);
-    unitCard.appendChild(subject);
-    unitCard.appendChild(addressing);
+    return addressing;
+}
+
+function generateUnitCard(unit){
+    let unitCard = document.createElement('div');
+    unitCard.className = "person card " + unit.id;
+
+    let subjectNum = getAllDecendants(globalInput, unit);
+
+    unitCard.appendChild(addAvatar(unit));
+    if(subjectNum > 0 ){
+        unitCard.appendChild(addSubgects(subjectNum));
+    }
+    
+    unitCard.appendChild(addAddressing(unit));
 
     return unitCard;
 
