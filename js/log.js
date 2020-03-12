@@ -170,7 +170,12 @@ document.body.appendChild(div1);
 let siblingPos = 25;
 let sibling =  getUnitByID(input, siblingPos);
 
-console.log(getAllDecendants(input, sibling));*/
+console.log(getAllDecendants(input, sibling));
 console.log( getUnitSiblings(globalInput, getHighestUnit(globalInput))[0].id);
 
-document.body.appendChild(generateZeroPage());
+document.body.appendChild(generateZeroPage());*/
+
+let idUnit = 25;
+let unit = getUnitByID(input,idUnit);
+
+document.body.appendChild(generateUnitCard(unit));

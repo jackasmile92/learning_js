@@ -3,5 +3,5 @@ make js generation of html skeleton
 dont forget about page title in chrome tab
 adapt bg image -check
 unit card separate html + css for practice -check
-generate unit card js
+generate unit card js -check
 write about process of developing

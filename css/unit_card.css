@@ -1,0 +1,123 @@
+.person.card{
+    position: absolute;
+    width: 280px;
+    height: 352px;
+}
+
+.avatar.small{
+    position: absolute;
+    width: 166px;
+    height: 166px;
+    left: calc(50% - 166px/2 + 1px);
+    top: 37px;
+    border-radius: 121px;
+    background: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
+}
+
+.avatar.small img{
+    position: absolute;
+    width: 158px;
+    height: 158px;
+    border-radius: 121px;
+    left: 4px;
+    top: 4px;
+}
+
+.person.subjects{
+    position: absolute;
+    width: 68px;
+    height: 73px;
+    left: calc(50% - 68px/2 - 60px);
+    top: 152px;
+    text-align: center;
+}
+
+.person.subjects img{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 2.74%;
+}
+
+.person.subjects div { 
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 10.96%;
+    bottom: 5.48%;
+    
+    /* Numbers */
+    display: inline-block;
+    font-family: Crimson Text;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 27px;
+    line-height: 55px;
+ 
+    background: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.person.addressing{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    
+    position: absolute;
+    width: 223px;
+    height: 70px;
+    left: calc(50% - 223px/2 + 0.5px);
+    top: 251px;    
+}
+
+.person.name {
+    position: static;
+    height: 35px;
+    left: 0%;
+    right: 0%;
+    top: 0px;
+
+    /* Heading 3 */
+
+    font-family: Crimson Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 110%;
+    /* or 35px */
+
+    text-align: center;
+
+    /* Gradient text */
+
+    background: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+}
+
+.person.title {
+    position: static;
+    height: 25px;
+    left: 16.37%;
+    right: 16.37%;
+    top: 45px;
+    
+    /* Paragraph */
+    
+    font-family: Crimson Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 148.6%;
+    /* or 25px */
+    
+    text-align: center;
+    letter-spacing: 0.035em;
+    
+    /* Gold */
+    
+    color: #DBAE64;    
+}
