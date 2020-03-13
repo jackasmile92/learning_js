@@ -1,7 +1,10 @@
 .person.card{
-    position: absolute;
+    position: relative;
     width: 280px;
     height: 352px;
+
+    display: inline-block; 
+    margin: 0 auto;
 }
 
 .avatar.small{
@@ -67,7 +70,7 @@
     padding: 0px;
     
     position: absolute;
-    width: 223px;
+    
     height: 70px;
     left: calc(50% - 223px/2 + 0.5px);
     top: 251px;    
