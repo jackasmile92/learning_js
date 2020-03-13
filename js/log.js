@@ -182,4 +182,3 @@ let unit = getUnitByID(input,idUnit);
 
 let unitSubj = getUnitChildren(input, unit);
 document.body.appendChild(generateUnitDeck(unitSubj));
-

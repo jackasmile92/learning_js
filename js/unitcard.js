@@ -39,12 +39,20 @@ function addSubgects(subjSum){
 }
 
 function addAddressing(unit){
+
+
+
     let addressing = document.createElement('div');
     addressing.className = "person addressing";
 
     let unitName = document.createElement('div');
     unitName.className = "person name";
     unitName.innerText = unit.name;
+
+    let unitNameStr = unit.name;
+    if(unitNameStr.length > 20){
+        unitName.style.fontSize = '27px';
+    }
 
     let unitTitle = document.createElement('div');
     unitTitle.className = "person title";
