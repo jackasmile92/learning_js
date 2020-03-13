@@ -1,0 +1,41 @@
+.middle.part{
+    width: 572px;
+    text-align: center;
+}
+
+.navigation{
+    display: flex;
+    width: 572px;
+    justify-content: center;
+    align-items: center;
+}
+
+.previous.unit,.next.unit{
+    display: inline-block;
+    width:46px;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+   
+}
+
+.main.unit.avatar{
+    display: inline-block;
+}
+
+.previous.unit img, .next.unit img {
+    position: absolute;
+}
+
+.arrow{
+    top:13px;
+    left:14px;
+}
+
+.ell{
+    right:2px;
+}
+
+.next.unit{
+    transform: scaleX(-1);
+}
