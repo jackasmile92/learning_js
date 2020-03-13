@@ -17,7 +17,14 @@ function addAvatar(unit){
     });
 
     avatar.appendChild(imageTag);
-
+/*
+    avatar.onclick = function(){
+        alert(unit.name);
+    };
+    avatar.onmouseover = function(){
+    avatar.style = "cursor: pointer;";
+    }
+*/
     return avatar;
 
 }
@@ -38,10 +45,7 @@ function addSubgects(subjSum){
     return subject;
 }
 
-function addAddressing(unit){
-
-
-
+function addAddressing(unit, subjectNum){
     let addressing = document.createElement('div');
     addressing.className = "person addressing";
 
@@ -60,7 +64,17 @@ function addAddressing(unit){
 
     addressing.appendChild(unitName);
     addressing.appendChild(unitTitle);
-
+/*
+    if( subjectNum > 0){
+        addressing.onclick = function(){
+            let unitSubj = getUnitChildren(globalInput, unit);
+            document.body.appendChild(generateUnitDeck(unitSubj));
+        };
+        addressing.onmouseover = function(){
+            addressing.style = "cursor: pointer;";
+        }
+    }
+*/
     return addressing;
 }
 
@@ -75,7 +89,7 @@ function generateUnitCard(unit){
         unitCard.appendChild(addSubgects(subjectNum));
     }
     
-    unitCard.appendChild(addAddressing(unit));
+    unitCard.appendChild(addAddressing(unit,subjectNum));
 
     return unitCard;
 
