@@ -1,0 +1,75 @@
+.middle.part{
+    width: 572px;
+    text-align: center;
+}
+
+.navigation{
+    display: flex;
+    width: 572px;
+    justify-content: center;
+    align-items: center;
+}
+
+.previous.unit,.next.unit{
+    display: inline-block;
+    width:46px;
+    position: relative;
+    margin-right: 30px;
+    margin-left: 30px;
+   
+}
+
+.main.unit.avatar{
+    width: 359px;
+    height: 359px;
+    display: inline-block;
+    border-radius: 250px;
+    background: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
+}
+
+.main.unit.avatar img{
+    width: 349px;
+    height: 349px;
+    border-radius: 250px;
+    margin-top: 5px;
+}
+
+.previous.unit img, .next.unit img {
+    position: absolute;
+}
+
+.arrow{
+    top:13px;
+    left:14px;
+}
+
+.ell{
+    right:2px;
+}
+
+.next.unit{
+    transform: scaleX(-1);
+}
+
+.main.unit.name p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    font-family: rgb(185, 185, 185) Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 61px;
+    line-height: 128.6%;
+
+    /* Gradient text */
+
+    color: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
+    background: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+}
+
+.decoration img{
+    margin-top: 77px;
+    height: 130px;
+}
