@@ -1,0 +1,47 @@
+.top_navigation{
+    width: 1191px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.top.level.link{
+    position: absolute;
+    display: inline-block;
+    float: left;
+    align-items: center;
+    height: 79px;
+}
+.zero.level.link{
+    position: absolute;
+    display: inline-block;
+    float: right;
+    width: 88px;
+    height: 79px;
+}
+
+.back{
+    width: 55px;
+    height: 33px;
+    /* Button text */
+
+    font-family: Crimson Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 128.6%;
+    /* or 33px */
+
+    letter-spacing: 0.035em;
+
+    /* Gradient text */
+
+    background: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.zero.level.link img{
+    width: 88px;
+    height: 79px;
+}

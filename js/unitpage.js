@@ -1,11 +1,11 @@
-function generateUnitDeck(unitArray){
-    let unitDeck = document.createElement('div');
-    unitDeck.className = "person deck";
 
-    for(let i = 0; i < unitArray.length; i++){
-        unitDeck.appendChild(generateUnitCard(unitArray[i]));
-    }
-
-    return unitDeck;
-
-}
+function generatePage(unit){
+    let page = document.createElement('div');
+  
+    page.appendChild(generateTopNavigation(unit));
+    page.appendChild(generateMiddlePart(unit));
+    let unitSubj = getUnitChildren(input, unit);
+    page.appendChild(generateUnitDeck(unitSubj));
+  
+    return page;
+  }

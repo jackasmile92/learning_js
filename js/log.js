@@ -175,12 +175,11 @@ console.log( getUnitSiblings(globalInput, getHighestUnit(globalInput))[0].id);
 
 document.body.appendChild(generateZeroPage());*/
 
-let idUnit = 5;
+
+let idUnit = 1;
 let unit = getUnitByID(input,idUnit);
 
-//document.body.appendChild(generateUnitCard(unit));
+document.body.appendChild(generatePage(unit));
 
 
-document.body.appendChild(generateMiddlePart(unit));
-let unitSubj = getUnitChildren(input, unit);
-document.body.appendChild(generateUnitDeck(unitSubj));
+
