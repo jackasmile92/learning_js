@@ -17,14 +17,18 @@ function addAvatar(unit){
     });
 
     avatar.appendChild(imageTag);
-/*
+
     avatar.onclick = function(){
-        alert(unit.name);
+        document.body.innerHTML = "";
+        mainUnitOnPage = unit.id;
+        generatePageForMainUnit();
+
     };
+    
     avatar.onmouseover = function(){
     avatar.style = "cursor: pointer;";
     }
-*/
+
     return avatar;
 
 }
@@ -53,6 +57,15 @@ function addAddressing(unit, subjectNum){
     unitName.className = "person name";
     unitName.innerText = unit.name;
 
+    /*
+    unitName.onmouseover = function(){
+        unitName.style = "border-bottom: 1px solid white;";
+    };
+    unitName.onmouseleave = function(){
+        unitName.style = "border-bottom: none;";
+    };
+    */
+
     let unitNameStr = unit.name;
     if(unitNameStr.length > 20){
         unitName.style.fontSize = '27px';
@@ -64,17 +77,25 @@ function addAddressing(unit, subjectNum){
 
     addressing.appendChild(unitName);
     addressing.appendChild(unitTitle);
-/*
+
+    addressing.onclick = function(){
+        document.body.innerHTML = "";
+        mainUnitOnPage = unit.id;
+        generatePageForMainUnit();
+
+    };
+    /*
     if( subjectNum > 0){
         addressing.onclick = function(){
             let unitSubj = getUnitChildren(globalInput, unit);
             document.body.appendChild(generateUnitDeck(unitSubj));
-        };
-        addressing.onmouseover = function(){
-            addressing.style = "cursor: pointer;";
-        }
-    }
-*/
+        };*/
+
+    addressing.onmouseover = function(){
+        addressing.style = "cursor: pointer;";
+    };
+  
+
     return addressing;
 }
 
@@ -85,7 +106,7 @@ function generateUnitCard(unit){
     let subjectNum = getAllDecendants(globalInput, unit);
 
     unitCard.appendChild(addAvatar(unit));
-    if(subjectNum > 0 ){
+    if(subjectNum > 0 && unit.parent > 0){
         unitCard.appendChild(addSubgects(subjectNum));
     }
     

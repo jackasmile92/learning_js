@@ -1,4 +1,17 @@
+body{
+    background-image: url("../images/bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    min-height: 910px;
+}
+
 .person.deck{
     width: 880px;
     text-align: center;
+    margin: 0 auto;
 }
+
+/*.unit.page{
+    width: 1440px;
+}*/

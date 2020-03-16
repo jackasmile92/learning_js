@@ -11,6 +11,16 @@ function generateTopNavigation(unit){
 
     topLevel.appendChild(back);
 
+    topLevel.onclick = function(){
+        document.body.innerHTML = "";
+        let prevUnit = getPreviousSibling(globalInput, unit);
+        mainUnitOnPage = unit.parent;
+        generatePageForMainUnit();
+    };
+    topLevel.onmouseover = function(){
+        topLevel.style = "cursor: pointer;";
+    };
+
     let zeroLevel = document.createElement('div');
     zeroLevel.className = "zero level link";      
    
@@ -18,6 +28,17 @@ function generateTopNavigation(unit){
     logo.src = "./images/logo.png";
     
     zeroLevel.appendChild(logo);
+
+    zeroLevel.onclick = function(){
+        document.body.innerHTML = "";
+        let prevUnit = getPreviousSibling(globalInput, unit);
+        mainUnitOnPage = 0;
+        generatePageForMainUnit();
+    };
+
+    zeroLevel.onmouseover = function(){
+        zeroLevel.style = "cursor: pointer;";
+    };
 
     topNavigation.appendChild(topLevel);
     topNavigation.appendChild(zeroLevel);

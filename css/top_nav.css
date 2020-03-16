@@ -1,5 +1,6 @@
 .top_navigation{
-    width: 1191px;
+    margin: 0 auto;
+    /*width: 1191px;*/
     height: 79px;
     justify-content: center;
     align-items: center;
@@ -9,7 +10,7 @@
     position: absolute;
     display: inline-block;
     /*float: left;*/
-    left: 0%;
+    left: 5%;
     align-items: center;
     height: 79px;
 }
@@ -17,7 +18,7 @@
     position: absolute;
     display: inline-block;
     /*float: right;*/
-    right: 0%;
+    right: 5%;
     width: 88px;
     height: 79px;
 }

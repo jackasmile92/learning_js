@@ -81,7 +81,7 @@
 
 .person.name {
     position: static;
-    height: 35px;
+    height: 45px;
     left: 0%;
     right: 0%;
     top: 0px;
@@ -96,7 +96,7 @@
     /* or 35px */
 
     text-align: center;
-
+    text-decoration: none;
     /* Gradient text */
 
     background: linear-gradient(180deg, #FFD28D 47.92%, #352000 100%);

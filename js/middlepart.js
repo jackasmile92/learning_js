@@ -19,6 +19,18 @@ function generateMiddlePart(unit){
     previousUnit.appendChild(ellLeft);
     previousUnit.appendChild(arrowLeft);
 
+    if (isSingleChild(globalInput, unit) == false){
+        previousUnit.onclick = function(){
+            document.body.innerHTML = "";
+            let prevUnit = getPreviousSibling(globalInput, unit);
+            mainUnitOnPage = prevUnit.id;
+            generatePageForMainUnit();
+       
+        };
+        previousUnit.onmouseover = function(){
+        previousUnit.style = "cursor: pointer;";
+    }};
+
     let nextUnit = document.createElement('div');
     nextUnit.className = "next unit";
 
@@ -33,22 +45,40 @@ function generateMiddlePart(unit){
     nextUnit.appendChild(ell);
     nextUnit.appendChild(arrow);
 
+    if (isSingleChild(globalInput, unit) == false){
+        nextUnit.onclick = function(){
+            document.body.innerHTML = "";
+            let nextUnit = getNextSibling(globalInput, unit);
+            mainUnitOnPage = nextUnit.id;
+            generatePageForMainUnit();
+      
+        };
+        nextUnit.onmouseover = function(){
+        nextUnit.style = "cursor: pointer;";
+    }};
+
     let mainUnitAvatar = document.createElement('div');
-    mainUnitAvatar.className = "main unit avatar";
-
-    let avatar = document.createElement('img');
-
-    checkImage( './images/'+unit.image, 
-    function(){ avatar.src = './images/'+unit.image; }, 
-    function(){ let ancestor = getUnitFirstAncestor(globalInput, unit);
-                avatar.src = './images/'+ ancestor.image; 
-    });
     
-    mainUnitAvatar.appendChild(avatar);
 
-    mainUnitNavigation.appendChild(previousUnit);
-    mainUnitNavigation.appendChild(mainUnitAvatar);
-    mainUnitNavigation.appendChild(nextUnit);
+    let avatar = document.createElement('img');   
+   
+    if(unit.id > 0){
+        mainUnitAvatar.className = "main unit avatar";
+        checkImage( './images/'+unit.image, 
+        function(){ avatar.src = './images/'+unit.image; }, 
+        function(){ let ancestor = getUnitFirstAncestor(globalInput, unit);
+                    avatar.src = './images/'+ ancestor.image; 
+        });
+        mainUnitAvatar.appendChild(avatar);
+        mainUnitNavigation.appendChild(previousUnit);
+        mainUnitNavigation.appendChild(mainUnitAvatar);
+        mainUnitNavigation.appendChild(nextUnit);
+    }else{
+        mainUnitAvatar.className = "zero avatar";
+        avatar.src = "./images/logo.png";
+        mainUnitAvatar.appendChild(avatar);
+        mainUnitNavigation.appendChild(mainUnitAvatar);    
+    }
 
     let mainUnitName = document.createElement('div');
     mainUnitName.className = "main unit name";
@@ -58,27 +88,37 @@ function generateMiddlePart(unit){
 
     mainUnitName.appendChild(mainUnitNameP);
 
-    
-    let unitTitle = document.createElement('div');
-    unitTitle.className = "person title";
-    
-    if( unit.post !== undefined){
-        unitTitle.innerText = unit.post;
-    };
+    if(unit.id > 0){
+        
+        let unitTitle = document.createElement('div');
+        unitTitle.className = "person title";
+        
+        if( unit.post !== undefined){
+            unitTitle.innerText = unit.post;
+        };
 
-    mainUnitName.appendChild(unitTitle);
+        mainUnitName.appendChild(unitTitle); 
+        
+        middlePart.appendChild(mainUnitNavigation);
+        middlePart.appendChild(mainUnitName);
+        
+        if(getUnitClildrenNum(globalInput, unit) > 0){
+            
+            let decoration = document.createElement('div');
+            decoration.className = "decoration";
 
-    let decoration = document.createElement('div');
-    decoration.className = "decoration";
+            let decorationImg = document.createElement('img');
+            decorationImg.src = "./images/icon_01.png";
 
-    let decorationImg = document.createElement('img');
-    decorationImg.src = "./images/icon_01.png";
+            decoration.appendChild(decorationImg);
+            middlePart.appendChild(decoration);
+        }
 
-    decoration.appendChild(decorationImg);
 
-    middlePart.appendChild(mainUnitNavigation);
-    middlePart.appendChild(mainUnitName);
-    middlePart.appendChild(decoration);
+        
+    } else {
+        middlePart.appendChild(mainUnitNavigation);
+    }
 
     return middlePart;
 }

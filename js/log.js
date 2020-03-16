@@ -173,13 +173,14 @@ let sibling =  getUnitByID(input, siblingPos);
 console.log(getAllDecendants(input, sibling));
 console.log( getUnitSiblings(globalInput, getHighestUnit(globalInput))[0].id);
 
-document.body.appendChild(generateZeroPage());*/
+document.body.appendChild(generateZeroPage());
 
 
-let idUnit = 1;
+let idUnit = 4;
 let unit = getUnitByID(input,idUnit);
 
-document.body.appendChild(generatePage(unit));
+document.title = 'Witcher | ' + unit.name;*/
+generatePageForMainUnit();
 
 
 
