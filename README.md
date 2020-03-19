@@ -1,2 +1,5 @@
-# learning_js
-private sandbox 4 learning js
+# Вариант выполнения задания для разработчиков
+Исходные данные
+https://github.com/redisca/interns-2020-data
+
+
