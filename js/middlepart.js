@@ -28,8 +28,17 @@ function generateMiddlePart(unit){
        
         };
         previousUnit.onmouseover = function(){
-        previousUnit.style = "cursor: pointer;";
-    }};
+            previousUnit.style = "cursor: pointer;";
+            var x = previousUnit.getElementsByClassName("ell");
+            x[0].style = "visibility: visible;";
+         }
+        previousUnit.onmouseout = function(){
+            var x = previousUnit.getElementsByClassName("ell");
+            x[0].style = "visibility: hidden;"; 
+         }
+    }else{
+        previousUnit.style = "visibility: hidden;";
+    };
 
     let nextUnit = document.createElement('div');
     nextUnit.className = "next unit";
@@ -54,8 +63,17 @@ function generateMiddlePart(unit){
       
         };
         nextUnit.onmouseover = function(){
-        nextUnit.style = "cursor: pointer;";
-    }};
+            nextUnit.style = "cursor: pointer;"
+            var x = nextUnit.getElementsByClassName("ell");
+            x[0].style = "visibility: visible;";
+        }
+        nextUnit.onmouseout = function(){
+            var x = nextUnit.getElementsByClassName("ell");
+            x[0].style = "visibility: hidden;"; 
+        }
+    }else{
+        nextUnit.style = "visibility: hidden;";
+    };
 
     let mainUnitAvatar = document.createElement('div');
     

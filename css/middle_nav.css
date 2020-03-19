@@ -46,6 +46,7 @@
 
 .ell{
     right:2px;
+    visibility: hidden;
 }
 
 .next.unit{
@@ -71,6 +72,6 @@
 }
 
 .decoration img{
-    margin-top: 77px;
+    margin-top: 20px;
     height: 130px;
 }

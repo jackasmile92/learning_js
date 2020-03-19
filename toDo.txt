@@ -1,7 +1,9 @@
 make html skeleton
 make js generation of html skeleton
-dont forget about page title in chrome tab
+dont forget about page title in chrome tab -check
 adapt bg image -check
 unit card separate html + css for practice -check
 generate unit card js -check
-write about process of developing
+write about process of developing -check
+write instruction how import new input data
+change src links for images and put it in variable in cookie.js 

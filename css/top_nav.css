@@ -14,6 +14,16 @@
     align-items: center;
     height: 79px;
 }
+
+.top.level.link hr{
+    position: absolute;
+    width: 55px;
+    top: 55%;
+    
+    border-color: #FFD28D;
+    visibility: hidden;
+}
+
 .zero.level.link{
     position: absolute;
     display: inline-block;

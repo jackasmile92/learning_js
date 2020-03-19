@@ -11,6 +11,9 @@ function generateTopNavigation(unit){
 
     topLevel.appendChild(back);
 
+    let topLevelLine = document.createElement('hr');
+    topLevel.appendChild(topLevelLine);
+
     topLevel.onclick = function(){
         document.body.innerHTML = "";
         let prevUnit = getPreviousSibling(globalInput, unit);
@@ -19,7 +22,14 @@ function generateTopNavigation(unit){
     };
     topLevel.onmouseover = function(){
         topLevel.style = "cursor: pointer;";
+        var x = topLevel.getElementsByTagName("hr");
+        x[0].style = "visibility: visible;"; 
     };
+
+    topLevel.onmouseout = function(){
+        var x = topLevel.getElementsByTagName("hr");
+        x[0].style = "visibility: hidden;"; 
+     }
 
     let zeroLevel = document.createElement('div');
     zeroLevel.className = "zero level link";      
