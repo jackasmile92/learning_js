@@ -3,15 +3,133 @@ body {
 }
 
 
-@media only screen and (max-width: 870px) {
+@media only screen and (max-width: 768px) {
     .person.deck{
-        width: 586px;
+        width: 400px;
     }
+
 }
 
-@media only screen and (max-width: 600px) {
-
+@media only screen and (max-width: 320px) {
+    body {
+        max-width: 320px;
+    }
+    
     .person.deck{
+        max-width: 300px;
+    }
+
+    .middle.part{
         width: 300px;
+
+    }
+    .navigation{
+        width:  300px;
+    }
+    .person.card{
+        width: 120px;
+        height:  200px;
+        margin-right:5px;
+        margin-left:5px;
+    }
+
+    .avatar.small{
+        width: 115px;
+        height: 115px;
+        left:0px;
+    }
+    
+    .avatar.small img{
+        width: 109px;
+        height: 109px;
+        left: 3px;
+        top: 3px;
+    }
+
+    .person.subjects{
+        width: 30px;
+        height: 33px;
+        top: 110px;
+        left: calc(50% - 30px/2 - 42.5px);
+    }
+    .person.subjects img{
+        width: 30px;
+        height: 33px;
+
+    }
+
+    .person.subjects div { 
+        font-size: 14px;
+        top: -30%;
+    }
+    .person.addressing{
+        top: 160px;
+    }
+    .person.name {
+        font-size: 19px;
+    }
+
+    .person.title {
+        font-size: 12px;
+    }
+
+    .previous.unit,.next.unit{
+        width:20px;
+    }
+
+    .main.unit.avatar{
+        width: 148px;
+        height: 148px;
+
+    }
+    .ell{
+        right:-25px;
+    }
+    
+    .main.unit.avatar img{
+        width: 138px;
+        height: 138px;
+        margin-top: 5px;
+    }
+
+    .decoration img{
+        height: 57.5px;
+    }
+
+    .main.unit.name p{
+        font-size: 41px;
+    }
+
+    .zero.level.link{
+        width: 40px;
+        height: 36px;
+    }
+    
+    .zero.level.link img{
+        width: 40px;
+        height: 36px;
+    }
+
+    .back{
+        font-size: 17px;
+        top: 10%;
+    }
+    .top.level.link hr{
+        position: absolute;
+        width: 36px;
+        top: 25%;
+        
+        border-color: #FFD28D;
+        visibility: hidden;
+    }
+
+    .zero.avatar{
+        width: 202px;
+        height: 181px;
+    }
+
+    .zero.avatar img{
+        width: 202px;
+        height: 181px;
     }
 }

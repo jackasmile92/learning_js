@@ -82,10 +82,10 @@ function generateMiddlePart(unit){
    
     if(unit.id > 0){
         mainUnitAvatar.className = "main unit avatar";
-        checkImage( './images/'+unit.image, 
-        function(){ avatar.src = './images/'+unit.image; }, 
+        checkImage( imageSrc + unit.image, 
+        function(){ avatar.src = imageSrc + unit.image; }, 
         function(){ let ancestor = getUnitFirstAncestor(globalInput, unit);
-                    avatar.src = './images/'+ ancestor.image; 
+                    avatar.src = imageSrc + ancestor.image; 
         });
         mainUnitAvatar.appendChild(avatar);
         mainUnitNavigation.appendChild(previousUnit);

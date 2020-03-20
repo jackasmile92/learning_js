@@ -7,7 +7,7 @@ body{
 }
 
 .person.deck{
-    width: 880px;
+    max-width: 1200px;
     text-align: center;
     margin: 0 auto;
 }

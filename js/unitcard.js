@@ -10,10 +10,10 @@ function addAvatar(unit){
     avatar.className = "avatar small";
     let imageTag = document.createElement('img');
     
-    checkImage( './images/'+unit.image, 
-    function(){ imageTag.src = './images/'+unit.image; }, 
+    checkImage( imageSrc + unit.image, 
+    function(){ imageTag.src = imageSrc + unit.image; }, 
     function(){ let ancestor = getUnitFirstAncestor(globalInput, unit);
-                imageTag.src = './images/'+ ancestor.image; 
+                imageTag.src = imageSrc + ancestor.image; 
     });
 
     avatar.appendChild(imageTag);
