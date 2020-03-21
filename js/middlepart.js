@@ -93,7 +93,7 @@ function generateMiddlePart(unit){
         mainUnitNavigation.appendChild(nextUnit);
     }else{
         mainUnitAvatar.className = "zero avatar";
-        avatar.src = "./images/logo.png";
+        avatar.src = imageSrc + "logo.png";
         mainUnitAvatar.appendChild(avatar);
         mainUnitNavigation.appendChild(mainUnitAvatar);    
     }

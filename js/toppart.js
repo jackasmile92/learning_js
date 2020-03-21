@@ -35,7 +35,7 @@ function generateTopNavigation(unit){
     zeroLevel.className = "zero level link";      
    
     let logo = document.createElement('img');
-    logo.src = "./images/logo.png";
+    logo.src = imageSrc + "logo.png";
     
     zeroLevel.appendChild(logo);
 
